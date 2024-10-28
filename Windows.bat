@@ -31,12 +31,13 @@ set /p answer=Have you answered all the forensics questions?[y/n]:
 	echo "   [_]   [______][_]     [_][_]      [_]   [_____]    [_]      [_]   [______]"
 	echo "                                                                             " 
 	echo "~~~~~~~~~~~~~~~~~~~~~Written by: Ethan Fowler Team-ByTE~~~~~~~~~~~~~~~~~~~~~~"
+	echo "~~~~~~~~~~~~~~~~~~~~~~~~~~Modified by: Gordon Sheng~~~~~~~~~~~~~~~~~~~~~~~~~~"
 	echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 	echo "1)Set user properties		2)Create a user"
-	echo "3)Disable a user		4)Change all passwords"
+	echo "3)Disable a user			4)Change all passwords"
 	echo "5)Disable guest/admin		6)Set password policy
 	echo "7)Set lockout policy		8)Enable Firewall"
-	echo "9)Search for media files	10)Disable services
+	echo "9)Search for media files		10)Disable services
 	echo "11)Turn on UAC			12)remote Desktop Config
 	echo "13)Enable auto update		14)Security options"
 	echo "15)Audit the machine		16)Edit groups"
@@ -145,10 +146,10 @@ set /p answer=Have you answered all the forensics questions?[y/n]:
 :passwdPol
 	rem Sets the password policy
 	rem Set complexity requirments
-	echo Setting pasword policies
-	net accounts /minpwlen:8
+	echo Setting password policies
+	net accounts /minpwlen:10
 	net accounts /maxpwage:60
-	net accounts /minpwage:10
+	net accounts /minpwage:1
 	net accounts /uniquepw:3
 	
 	pause
@@ -158,7 +159,7 @@ set /p answer=Have you answered all the forensics questions?[y/n]:
 	rem Sets the lockout policy
 	echo Setting the lockout policy
 	net accounts /lockoutduration:30
-	net accounts /lockoutthreshold:3
+	net accounts /lockoutthreshold:10
 	net accounts /lockoutwindow:30
 
 	pause
