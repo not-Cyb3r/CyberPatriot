@@ -41,7 +41,7 @@ set /p answer=Have you answered all the forensics questions?[y/n]:
 	echo "11)Turn on UAC			12)remote Desktop Config
 	echo "13)Enable auto update		14)Security options"
 	echo "15)Audit the machine		16)Edit groups"
-	echo "69)Exit				70)Reboot"
+	echo "69)Exit			70)Reboot"
 	echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 	set /p answer=Please choose an option: 
 		if "%answer%"=="1" goto :userProp
